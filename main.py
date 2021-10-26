@@ -33,6 +33,11 @@ def get_longest_all_primes(l):
         lst.append(l[i])
     return lst
 
+def test_get_longest_all_primes():
+    assert get_longest_all_primes([5, 7, 12, 13, 17, 23, 29]) == [13, 17, 23, 29]
+    assert get_longest_all_primes([4, 6, 11, 4, 11, 13, 31]) == [11, 13, 31]
+    assert get_longest_all_primes([7, 11, 23, 4, 6, 1]) == [7, 11, 23]
+
 def number_div_count (n):
     '''
     functia calculeaza numarul de divizori ai numarului n
@@ -73,6 +78,11 @@ def get_longest_same_div_count(s):
         lst.append(s[i])
     return lst
 
+def test_get_longest_same_div_count():
+    assert get_longest_same_div_count([5, 7, 8]) == [5, 7]
+    assert get_longest_same_div_count([2, 8, 6, 12]) == [8, 6]
+    assert get_longest_same_div_count([1, 13, 23, 19, 4]) == [13, 23, 19]
+
 def readList():
     l = []
     p = input("Introduceti elemnetele sirului separate prin virgula, ")
@@ -112,9 +122,14 @@ def get_longest_prime_digits(l):
                 finalindex = i
         else:
             length = 0
-    for i in range(finalindex - maxim + 1, finalindex):
+    for i in range(finalindex - maxim + 1, finalindex + 1):
         lst.append(l[i])
     return lst
+
+def test_get_longest_prime_digits():
+    assert get_longest_prime_digits([234, 577, 7537, 12]) == [577, 7537]
+    assert get_longest_prime_digits([33, 75, 57, 24, 56]) == [33, 75, 57]
+    assert get_longest_prime_digits([794, 3537, 335, 723, 46]) == [3537, 335, 723]
 
 if __name__ == '__main__':
     finish = False
@@ -128,15 +143,15 @@ if __name__ == '__main__':
             l = readList()
             print("Subsecventa cautata este: ")
             print(get_longest_all_primes(l))
-            #test_get_largest_prime_below()
+            test_get_longest_all_primes()
         elif option == '12':
             l = readList()
             print(get_longest_same_div_count(l))
-            #test_get_perfect_squares()
+            test_get_longest_same_div_count()
         elif option == '13':
             l = readList()
             print(get_longest_prime_digits(l))
-            #test_get_perfect_squares()
+            test_get_longest_prime_digits()
         elif option == 'x':
             finish = True
         else:
