@@ -33,8 +33,6 @@ def get_longest_all_primes(l):
         lst.append(l[i])
     return lst
 
-''' 2 6 7 8 9 1 3 5 7 13 4 '''
-
 def number_div_count (n):
     '''
     functia calculeaza numarul de divizori ai numarului n
